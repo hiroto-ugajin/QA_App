@@ -29,7 +29,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         setSupportActionBar(binding.content.toolbar)
 
+        // ----- 修正:ここから
         binding.content.fab.setOnClickListener {
+            // ジャンルを選択していない場合はメッセージを表示するだけ
+            if (genre == 0) {
+                Snackbar.make(it, getString(R.string.question_no_select_genre), Snackbar.LENGTH_LONG).show()
+                return@setOnClickListener
+            }
+
             // ログイン済みのユーザーを取得する
             val user = FirebaseAuth.getInstance().currentUser
 
@@ -37,10 +44,15 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             if (user == null) {
                 val intent = Intent(applicationContext, LoginActivity::class.java)
                 startActivity(intent)
+            } else {
+                // ジャンルを渡して質問作成画面を起動する
+                val intent = Intent(applicationContext, QuestionSendActivity::class.java)
+                intent.putExtra("genre", genre)
+                startActivity(intent)
             }
         }
+        // ----- 修正:ここまで
 
-        // ----- 追加:ここから
         // ナビゲーションドロワーの設定
         val toggle = ActionBarDrawerToggle(
             this,
