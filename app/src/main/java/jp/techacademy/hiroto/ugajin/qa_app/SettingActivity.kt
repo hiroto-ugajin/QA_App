@@ -10,7 +10,6 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import jp.techacademy.hiroto.ugajin.qa_app.databinding.ActivitySettingBinding
 
-
 class SettingActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySettingBinding

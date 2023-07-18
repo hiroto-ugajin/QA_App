@@ -28,10 +28,6 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
-
-//    binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-//        setContentView(R.layout.activity_login)
-
         setContentView(binding.root)
 
         databaseReference = FirebaseDatabase.getInstance().reference
@@ -114,7 +110,6 @@ class LoginActivity : AppCompatActivity() {
 
         binding.createButton.setOnClickListener { v ->
             // キーボードが出てたら閉じる
-//            val im = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             val inputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
             val im = inputMethodManager
             im.hideSoftInputFromWindow(v.windowToken, InputMethodManager.HIDE_NOT_ALWAYS)
@@ -137,7 +132,7 @@ class LoginActivity : AppCompatActivity() {
 
         binding.loginButton.setOnClickListener { v ->
             // キーボードが出てたら閉じる
-           val inputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+            val inputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
             val im = inputMethodManager
             im.hideSoftInputFromWindow(v.windowToken, InputMethodManager.HIDE_NOT_ALWAYS)
 
@@ -181,6 +176,6 @@ class LoginActivity : AppCompatActivity() {
         editor.putString(NameKEY, name)
         editor.apply()
     }
-    }
+}
 
 

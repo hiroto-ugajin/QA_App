@@ -6,12 +6,27 @@
     android:padding="16dp"
     tools:context=".QuestionDetailActivity">
 
+    <!-- 課題対応:ここから -->
+    <Button
+        android:id="@+id/favoriteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:text="@string/question_favorite_enable"
+        android:textColor="@color/white"
+        tools:ignore="RelativeOverlap,TextContrastCheck" />
+    <!-- 課題対応:ここまで -->
+
+    <!-- 課題対応:marginTopを追加 -->
     <ListView
         android:id="@+id/listView"
+        android:layout_marginTop="50dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true" />
+    <!-- 課題対応:ここまで（marginTopを追加） -->
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"

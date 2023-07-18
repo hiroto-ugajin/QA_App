@@ -54,7 +54,6 @@ class QuestionSendActivity : AppCompatActivity(), View.OnClickListener,
         binding.imageView.setOnClickListener(this)
     }
 
-
     /**
      * このActivityに戻ってきた時の処理
      */
@@ -103,7 +102,6 @@ class QuestionSendActivity : AppCompatActivity(), View.OnClickListener,
 
         pictureUri = null
     }
-
 
     override fun onClick(v: View) {
         if (v === binding.imageView) {

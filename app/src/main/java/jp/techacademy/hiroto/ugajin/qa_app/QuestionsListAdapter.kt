@@ -1,6 +1,5 @@
 package jp.techacademy.hiroto.ugajin.qa_app
 
-
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory

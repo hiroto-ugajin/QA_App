@@ -16,6 +16,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.QA_App"
         tools:targetApi="31">
+        <!-- 課題対応:ここから -->
+        <activity
+            android:name=".FavoriteActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <!-- 課題対応:ここまで -->
+
         <activity
             android:name=".AnswerSendActivity"
             android:exported="false" />

@@ -1,14 +1,6 @@
 <resources>
     <string name="app_name">QA_App</string>
     <string name="action_settings">Settings</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
     <!-- ログイン画面用文字列 -->
     <string name="login_email_hint">メールアドレス</string>
@@ -58,4 +50,8 @@
     <string name="send_answer_failure">投稿に失敗しました</string>
     <string name="answer_error_message">回答を入力してください</string>
 
+    <!-- 課題対応 お気に入り登録削除用文字列 -->
+    <string name="favorite_title">お気に入り</string>
+    <string name="question_favorite_enable">お気に入りに追加</string>
+    <string name="question_favorite_disable">お気に入りを解除</string>
 </resources>
