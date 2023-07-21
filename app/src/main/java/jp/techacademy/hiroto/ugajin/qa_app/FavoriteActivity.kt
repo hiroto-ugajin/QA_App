@@ -8,10 +8,12 @@ import android.view.MenuItem
 import android.widget.AdapterView
 import androidx.core.app.NavUtils
 import com.google.firebase.database.*
-import com.google.firebase.database.R
 import jp.techacademy.hiroto.ugajin.qa_app.databinding.ActivityFavoriteBinding
 import java.util.ArrayList
 import java.util.HashMap
+
+
+
 
 class FavoriteActivity: AppCompatActivity() {
     private lateinit var binding: ActivityFavoriteBinding
@@ -20,9 +22,6 @@ class FavoriteActivity: AppCompatActivity() {
     private lateinit var favGenreRef: DatabaseReference
     private lateinit var questionArrayList: ArrayList<Question>
     private lateinit var adapter: QuestionsListAdapter
-
-
-
 
     private val eventListener = object : ChildEventListener {
         override fun onChildAdded(dataSnapshot: DataSnapshot, s: String?) {

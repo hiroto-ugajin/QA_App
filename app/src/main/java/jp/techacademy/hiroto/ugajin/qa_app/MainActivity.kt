@@ -3,20 +3,20 @@ package jp.techacademy.hiroto.ugajin.qa_app
 import android.content.Intent
 import android.os.Bundle
 import android.util.Base64
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.core.view.GravityCompat
+import com.google.android.material.navigation.NavigationView
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
-import jp.techacademy.hiroto.ugajin.qa_app.databinding.ActivityMainBinding
-import androidx.appcompat.app.ActionBarDrawerToggle // 追加
-import androidx.core.view.GravityCompat // 追加
-import com.google.android.material.navigation.NavigationView // 追加
 import com.google.firebase.database.*
+import jp.techacademy.hiroto.ugajin.qa_app.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
-
     private lateinit var binding: ActivityMainBinding
+
     private var genre = 0
 
     private lateinit var databaseReference: DatabaseReference
@@ -124,7 +124,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         binding.content.fab.setOnClickListener {
             // ジャンルを選択していない場合はメッセージを表示するだけ
             if (genre == 0) {
-                Snackbar.make(it, getString(R.string.question_no_select_genre), Snackbar.LENGTH_LONG).show()
+                Snackbar.make(
+                    it,
+                    getString(R.string.question_no_select_genre),
+                    Snackbar.LENGTH_LONG
+                ).show()
                 return@setOnClickListener
             }
 
@@ -196,11 +200,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val id = item.itemId
 
         // ----- 課題対応:ここから（action_favoriteの場合を追加）
-        if (id == com.google.firebase.database.R.id.action_settings) {
+        if (id == R.id.action_settings) {
             val intent = Intent(applicationContext, SettingActivity::class.java)
             startActivity(intent)
             return true
-        } else if (id == com.google.firebase.database.R.id.action_favorite) {
+        } else if (id == R.id.action_favorite) {
             // ログイン済みのユーザーを取得する
             val user = FirebaseAuth.getInstance().currentUser
             if (user == null) {

@@ -1,5 +1,6 @@
 package jp.techacademy.hiroto.ugajin.qa_app
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -10,8 +11,6 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-
-//import com.google.firebase.database.core.Context
 import jp.techacademy.hiroto.ugajin.qa_app.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
@@ -110,8 +109,7 @@ class LoginActivity : AppCompatActivity() {
 
         binding.createButton.setOnClickListener { v ->
             // キーボードが出てたら閉じる
-            val inputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
-            val im = inputMethodManager
+            val im = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             im.hideSoftInputFromWindow(v.windowToken, InputMethodManager.HIDE_NOT_ALWAYS)
 
             val email = binding.emailText.text.toString()
@@ -132,8 +130,7 @@ class LoginActivity : AppCompatActivity() {
 
         binding.loginButton.setOnClickListener { v ->
             // キーボードが出てたら閉じる
-            val inputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
-            val im = inputMethodManager
+            val im = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             im.hideSoftInputFromWindow(v.windowToken, InputMethodManager.HIDE_NOT_ALWAYS)
 
             val email = binding.emailText.text.toString()

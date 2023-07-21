@@ -8,8 +8,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import android.view.View // 課題対応:追加
 import androidx.core.content.ContextCompat // 課題対応:追加
-
 import jp.techacademy.hiroto.ugajin.qa_app.databinding.ActivityQuestionDetailBinding
+
 
 class QuestionDetailActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var binding: ActivityQuestionDetailBinding
