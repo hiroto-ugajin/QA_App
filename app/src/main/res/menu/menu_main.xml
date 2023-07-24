@@ -7,4 +7,11 @@
         android:orderInCategory="100"
         android:title="@string/settings_title"
         app:showAsAction="never" />
+    <!-- 課題対応:ここから -->
+    <item
+        android:id="@+id/action_favorite"
+        android:orderInCategory="100"
+        android:title="@string/favorite_title"
+        app:showAsAction="never" />
+    <!-- 課題対応:ここまで -->
 </menu>
